@@ -66,5 +66,20 @@ public class _03_Encapsulation {
         System.out.println("Full Name: " + person.getFullName());
         System.out.println("Age: " + person.getAge());
 
+        // ------------------------------------------------------------------------------------------------------------
+
+        _03_PersonClass a = new _03_PersonClass(1234543L, "Ali", "Güneş", 23);
+        _03_PersonClass b = new _03_PersonClass(8797796L, "Veli","Ay", 58);
+
+        System.out.println("Example Started...");
+
+        System.out.println("a ------> [" + a.getFullName() + "]");
+        System.out.println("a ------> [" + b.getFullName() + "]");
+
+        a = b; // Referansları switch ediyoruz.
+        b = a;
+
+        System.out.println("a ------> [" + a.getFullName() + "]");
+        System.out.println("a ------> [" + b.getFullName() + "]");
     }
 }
