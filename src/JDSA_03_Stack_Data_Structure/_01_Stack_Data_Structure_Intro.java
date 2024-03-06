@@ -1,4 +1,4 @@
-package JVYA_03_Stack_Data_Structure;
+package JDSA_03_Stack_Data_Structure;
 
 public class _01_Stack_Data_Structure_Intro {
 

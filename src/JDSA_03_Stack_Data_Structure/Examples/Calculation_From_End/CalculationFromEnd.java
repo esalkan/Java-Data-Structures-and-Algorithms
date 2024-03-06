@@ -1,4 +1,4 @@
-package JVYA_03_Stack_Data_Structure.Examples.Calculation_From_End;
+package JDSA_03_Stack_Data_Structure.Examples.Calculation_From_End;
 
 public class CalculationFromEnd {
     public static void main(String[] args) {

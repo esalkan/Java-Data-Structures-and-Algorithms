@@ -1,4 +1,4 @@
-package JVYA_03_Stack_Data_Structure;
+package JDSA_03_Stack_Data_Structure;
 
 public class Stack {
     /* Yığıtın alabileceği eleman sayısının üst sınırı */
