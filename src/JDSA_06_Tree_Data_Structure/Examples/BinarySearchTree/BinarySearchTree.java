@@ -1,4 +1,4 @@
-package JVYA_06_Tree_Data_Structure.Examples.BinarySearchTree;
+package JDSA_06_Tree_Data_Structure.Examples.BinarySearchTree;
 
 class Node
 {

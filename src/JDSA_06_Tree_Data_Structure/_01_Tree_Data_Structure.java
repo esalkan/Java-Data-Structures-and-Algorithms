@@ -1,4 +1,4 @@
-package JVYA_06_Tree_Data_Structure;
+package JDSA_06_Tree_Data_Structure;
 import java.util.*;
 
 public class _01_Tree_Data_Structure {
