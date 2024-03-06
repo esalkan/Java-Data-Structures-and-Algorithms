@@ -1,4 +1,4 @@
-package JVYA_04_Queue_Data_Structure;
+package JDSA_04_Queue_Data_Structure;
 
 public class _01_Queue_Data_Structure_Intro {
 

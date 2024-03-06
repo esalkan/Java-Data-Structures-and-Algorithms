@@ -1,4 +1,4 @@
-package JVYA_04_Queue_Data_Structure.Examples.QueueStackExample;
+package JDSA_04_Queue_Data_Structure.Examples.QueueStackExample;
 
 // Ozellestirilmis Kuyruk Sinifi
 // BU SINIFI DEGISTIRMEYINIZ

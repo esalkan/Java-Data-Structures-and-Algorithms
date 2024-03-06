@@ -1,5 +1,5 @@
-package JVYA_04_Queue_Data_Structure.Examples.Simulation;
-import JVYA_04_Queue_Data_Structure.Examples.QueueStackExample.IdeaQueue;
+package JDSA_04_Queue_Data_Structure.Examples.Simulation;
+import JDSA_04_Queue_Data_Structure.Examples.QueueStackExample.IdeaQueue;
 import java.util.Random;
 
 public class Simulation {
