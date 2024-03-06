@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection.Examples;
+package JDSA_01_OOP_Encapsulation_GarbageCollection.Examples;
 
 /*
     * Kapsülleme ve Çöp toplama Örneği

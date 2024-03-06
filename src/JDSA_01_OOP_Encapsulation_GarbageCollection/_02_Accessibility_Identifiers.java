@@ -1,6 +1,6 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection;
+package JDSA_01_OOP_Encapsulation_GarbageCollection;
 
-import JVYA_01_OOP_Encapsulation_GarbageCollection.Package01.A;
+import JDSA_01_OOP_Encapsulation_GarbageCollection.Package01.A;
 
 public class _02_Accessibility_Identifiers {
 

@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection.Package01;
+package JDSA_01_OOP_Encapsulation_GarbageCollection.Package01;
 
 public class A {
     private int x; // private: sadece aynı sınıftan erişilebilir | accessible from the same class only

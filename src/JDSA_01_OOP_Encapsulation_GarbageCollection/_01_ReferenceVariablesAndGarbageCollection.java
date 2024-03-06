@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection;
+package JDSA_01_OOP_Encapsulation_GarbageCollection;
 
 import java.awt.*;
 

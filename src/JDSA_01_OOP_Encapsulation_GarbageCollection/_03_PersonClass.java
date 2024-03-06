@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection;
+package JDSA_01_OOP_Encapsulation_GarbageCollection;
 
 public class _03_PersonClass {
     // Person sınıfı, bir kişinin bilgilerini tutmak için oluşturulmuştur.

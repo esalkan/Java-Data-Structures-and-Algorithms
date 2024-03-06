@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection.Examples;
+package JDSA_01_OOP_Encapsulation_GarbageCollection.Examples;
 
 public class Square {
     private int edge;  // private: Sadece bu sınıf içerisinden erişilebilir. - Only accessible from this class.

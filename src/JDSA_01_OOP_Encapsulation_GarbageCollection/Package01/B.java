@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection.Package01;
+package JDSA_01_OOP_Encapsulation_GarbageCollection.Package01;
 
 // B Class is in the same package with A Class so it can access to A Class' members (x, y, z)
 // B Sınıfı A Sınıfı ile aynı pakette olduğu için A Sınıfının üyelerine (x, y, z) erişebilir

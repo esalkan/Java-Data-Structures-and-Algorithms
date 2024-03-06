@@ -1,4 +1,4 @@
-package JVYA_01_OOP_Encapsulation_GarbageCollection;
+package JDSA_01_OOP_Encapsulation_GarbageCollection;
 
 /*
     * Kapsülleme, saklama, giydirme, gizleme olarak bilinen bu kavram, bir nesnenin değişkenlerini ve fonksiyonlarını bir arada tutarak,
