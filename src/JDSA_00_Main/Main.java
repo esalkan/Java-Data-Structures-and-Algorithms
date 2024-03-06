@@ -1,4 +1,4 @@
-package JVYA_00_Main;
+package JDSA_00_Main;
 
 public class Main {
     public static void main(String[] args) {
