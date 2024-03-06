@@ -1,4 +1,4 @@
-package JVYA_05_List_Data_Structure.Examples;
+package JDSA_05_List_Data_Structure.Examples;
 
 public class StudentList {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package JVYA_05_List_Data_Structure;
+package JDSA_05_List_Data_Structure;
 
 public class _01_List_Data_Structure {
 
