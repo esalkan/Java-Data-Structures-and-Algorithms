@@ -68,64 +68,103 @@ public class _01_Tree_Data_Structure {
         * Bu sınıf genellikle ağacın kök düğümünü tutar ve ağaç üzerinde çeşitli işlemler gerçekleştirmek için
         * gerekli yöntemleri sağlar.
      */
-
     static class BinarySearchTree {
+        // Node sınıfı | Node class
+        // Bu sınıf, ağaç düğümlerini temsil eder. | This class represents the tree nodes.
+        // Her bir düğüm, bir veri (data) ve sol ve sağ çocuklarına (left ve right) sahip olabilir. | Each node can have a data and left and right children.
         static class Node {
             int data;
             Node left, right;
 
+            // Düğüm yapıcı (constructor) işlevi | Node constructor function
+            // Yeni bir düğüm oluşturur ve veri (data) ile başlatır. | Creates a new node and initializes it with data.
             public Node(int data) {
                 this.data = data;
                 left = right = null;
             }
         }
 
+        // Kök düğüm | Root node
+        // Ağacın kök düğümünü temsil eder. | Represents the root node of the tree.
+        // Ağaç üzerinde çeşitli işlemler gerçekleştirmek için bu düğümü kullanırız. | We use this node to perform various operations on the tree.
+        // Bu düğüm genellikle ağacın diğer düğümlerine erişmek için kullanılır. | This node is usually used to access other nodes of the tree.
         Node root;
 
         // 1. Ekleme (Insertion)
+        // Ağaca yeni bir düğüm ekler. | Adds a new node to the tree.
+        // Bu işlev, ağacın kök düğümünü ve eklenecek veriyi alır. | This function takes the root node of the tree and the data to be added.
+        // Ağaç üzerinde dolaşarak veriyi ekleyeceğimiz uygun konumu buluruz. | We traverse the tree to find the appropriate position to add the data.
         public void insert(int data) {
             root = insertRecursive(root, data);
         }
 
+        // Ağaca yeni bir düğüm ekler. | Adds a new node to the tree.
+        // Bu işlev, ağacın kök düğümünü ve eklenecek veriyi alır. | This function takes the root node of the tree and the data to be added.
+        // Ağaç üzerinde dolaşarak veriyi ekleyeceğimiz uygun konumu buluruz. | We traverse the tree to find the appropriate position to add the data.
         private Node insertRecursive(Node root, int data) {
+            // Eğer ağaç boşsa, yeni düğümü kök düğüm olarak ekleriz. | If the tree is empty, we add the new node as the root node.
             if (root == null) {
                 root = new Node(data);
                 return root;
             }
 
+            // Eğer veri, kök düğüm verisinden küçükse, sol çocuğa ekleriz. | If the data is less than the root node data, we add it to the left child.
             if (data < root.data)
                 root.left = insertRecursive(root.left, data);
+            // Eğer veri, kök düğüm verisinden büyükse, sağ çocuğa ekleriz. | If the data is greater than the root node data, we add it to the right child.
             else if (data > root.data)
                 root.right = insertRecursive(root.right, data);
 
+            // Düğümü döndürürüz. | We return the node.
             return root;
         }
 
         // 2. Silme (Deletion)
+        // Ağaçtan bir düğümü siler. | Deletes a node from the tree.
+        // Bu işlev, ağacın kök düğümünü ve silinecek veriyi alır. | This function takes the root node of the tree and the data to be deleted.
+        // Ağaç üzerinde dolaşarak silinecek düğümü buluruz. | We traverse the tree to find the node to be deleted.
+        // Düğümü sileriz ve ağacı güncelleriz. | We delete the node and update the tree.
         public void delete(int data) {
             root = deleteRecursive(root, data);
         }
 
+        // Ağaçtan bir düğümü siler. | Deletes a node from the tree.
+        // Bu işlev, ağacın kök düğümünü ve silinecek veriyi alır. | This function takes the root node of the tree and the data to be deleted.
+        // Ağaç üzerinde dolaşarak silinecek düğümü buluruz. | We traverse the tree to find the node to be deleted.
+        // Düğümü sileriz ve ağacı güncelleriz. | We delete the node and update the tree.
         private Node deleteRecursive(Node root, int data) {
+            // Eğer ağaç boşsa, ağacı döndürürüz. | If the tree is empty, we return the tree.
             if (root == null)
                 return root;
 
+            // Eğer veri, kök düğüm verisinden küçükse, sol çocuğu sileriz. | If the data is less than the root node data, we delete the left child.
             if (data < root.data)
                 root.left = deleteRecursive(root.left, data);
+            // Eğer veri, kök düğüm verisinden büyükse, sağ çocuğu sileriz. | If the data is greater than the root node data, we delete the right child.
             else if (data > root.data)
                 root.right = deleteRecursive(root.right, data);
+            // Eğer veri, kök düğüm verisine eşitse, düğümü sileriz. | If the data is equal to the root node data, we delete the node.
             else {
+                // Eğer sol çocuk yoksa, sağ çocuğu döndürürüz. | If there is no left child, we return the right child.
                 if (root.left == null)
                     return root.right;
+                // Eğer sağ çocuk yoksa, sol çocuğu döndürürüz. | If there is no right child, we return the left child.
                 else if (root.right == null)
                     return root.left;
 
+                // Eğer iki çocuk da varsa, sağ çocuğun en küçük değerini buluruz. | If there are two children, we find the smallest value of the right child.
                 root.data = minValue(root.right);
+                // Sağ çocuğun en küçük değerini sileriz. | We delete the smallest value of the right child.
                 root.right = deleteRecursive(root.right, root.data);
             }
             return root;
         }
 
+        // Ağaçtaki en küçük değeri döndürür. | Returns the smallest value in the tree.
+        // Bu işlev, ağacın kök düğümünü alır ve ağaçtaki en küçük değeri bulur. | This function takes the root node of the tree and finds the smallest value in the tree.
+        // Ağaçtaki en küçük değeri döndürür. | Returns the smallest value in the tree.
+        // Bu işlev, ağacın en solundaki düğümdeki değeri bulur. | This function finds the value in the leftmost node of the tree.
+        // Bu düğüm, ağacın en küçük değerini temsil eder. | This node represents the smallest value in the tree.
         private int minValue(Node root) {
             int minVal = root.data;
             while (root.left != null) {
