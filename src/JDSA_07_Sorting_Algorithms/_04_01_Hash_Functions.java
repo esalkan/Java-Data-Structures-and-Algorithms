@@ -82,20 +82,91 @@ public class _04_01_Hash_Functions {
         *
     */
 
+    // Doğrama yönteminde tutulacak kayıtları tanımlayan sınıf
+    // Class defining records to be kept in the hashing method
+    public static class Record {
+        int key;               // Kaytın anahtar değeri | Key value of the record
+        String info;           // Kaydın bilgi kısmı (Kayıtta tutulacak bilgi) | Information part of the record (Information to be kept in the record)
+
+        // Constructor function, assigns the given parameters to the specific attributes
+        // Yapıcı metot, verilen parametreleri belirli niteliklere atar
+        Record ( int key, String info ) {
+            this.key = key;
+            this.info = info;
+        }
+    }
+
+    // Doğrama sınıfı, çakışma durumunda doğrusal yerleştirme kullanır
+    // Hash class uses linear placement in case of collision
+    public static class Hash {
+        private Record[] table;     // Doğrama tablosu, her bir elemanında anahtar ve bilgi tutulur
+                                    // Hash table, key and information are kept in each element
+
+        // Yapıcı metod, size boyutunda doğrama tablosu oluşturur
+        // Constructor method, creates a hash table of size size
+        public Hash ( int size ) {
+            table = new Record[ size ];
+        }
+
+        // Doğrama fonksiyonu, verilen anahtar değerine göre tablo boyutuna göre modunu alarak bir tablo adresi elde eder
+        // Hash function, takes the mod of the table size according to the given key value and obtains a table address
+        private int hashFunction ( int v ) {
+            return v % table.length;
+        }
+
+        // Insert metodu, kimlik no değerine göre, kimlik no ile birlikte isim bilgisini tabloya ekler
+        // Insert function, adds the name information to the table with the identity number value
+        public void insert ( int id, String name ) {
+            int x = hashFunction ( id );          // hash fonksiyonu sonucu x'te | x in the result of the hash function
+            while ( table[ x ] != null )          // tablo'nun x. elemanı dolu olduğu sürece | as long as the xth element of the table is full
+                x = ( x + 1 ) % table.length;      //   x değerine (dairesel olarak) bir ekle | add one to x (circularly)
+            table[ x ] = new Record ( id, name );  // bu boş yere, kimlik no ve isim bilgilerini tutan kaydı yerleştir | place the record that holds the identity number and name information in this empty place
+        }
+
+        // Search metodu, verilen kimlik no anahtar değeriyle tabloya konulmuş olan ismi bulup döndürür
+        // Search method, finds and returns the name placed in the table with the given identity number key value
+        public String search ( int id ) {
+            int x = hashFunction ( id );          // hash fonksiyonu sonucu x'te | x in the result of the hash function
+            // tablo'nun x. elemanı doluyken ve o kaydın anahtar değeri kimlik no'dan farklı iken | while the xth element of the table is full and the key value of that record is different from the identity number
+            while ( table[ x ] != null && table[ x ].key != id )
+                x = ( x + 1 ) % table.length;        //   x değerine (dairesel olarak) bir ekle | add one to x (circularly)
+            if ( table[ x ] != null )             // döngüden çıktığımızda, tablo'nun x. elemanı boş değilse, | when we exit the loop, if the xth element of the table is not empty
+                return table[ x ].info;          //   oradaki kaydın bilgi kısmını döndür | return the information part of the record there
+            else                             // ama boş ise, |  but if it's empty
+                return null;                   //   bulamadık demek: null döndür |  means we couldn't find it: return null
+        }
+    }
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        String s;
+        Hash h = new Hash ( 7 );
 
-        int key = 123;
-        int m = 101;
-        int a = 3;
-        int b = 5;
-        int p = 100;
-        int q = 97;
+        h.insert ( 5, "beş" );
+        h.insert ( 20, "yirmi" );
+        h.insert ( 6, "altı" );
+        h.insert ( 13, "onüç" );
+        h.insert ( 32, "otuziki" );
+        h.insert ( 13, "yine onüç" );
 
-        System.out.println("H(key) = " + hashFunction(key, m));
-        System.out.println("H(key) = " + hashFunction(key, m, a, b));
-        System.out.println("H(key) = " + hashFunction(key, m, a, b, p));
-        System.out.println("H(key) = " + hashFunction(key, m, a, b, p, q));
+        s = h.search ( 35 );
+        s = h.search ( 6 );
+        s = h.search ( 13 );
+        s = h.search ( 138 );
+
+
+
+
+//        int key = 123;
+//        int m = 101;
+//        int a = 3;
+//        int b = 5;
+//        int p = 100;
+//        int q = 97;
+//
+//        System.out.println("H(key) = " + hashFunction(key, m));
+//        System.out.println("H(key) = " + hashFunction(key, m, a, b));
+//        System.out.println("H(key) = " + hashFunction(key, m, a, b, p));
+//        System.out.println("H(key) = " + hashFunction(key, m, a, b, p, q));
 
     }
 
