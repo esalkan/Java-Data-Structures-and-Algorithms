@@ -105,6 +105,14 @@ public class _03_01_Binary_Search_Tree {
         * Bu yapıya sahip bir ağaçta ise arama işlemi sırayla arama (sequential search) yöntemiyle aynı performansa
         * sahip olacaktır.
         *
+        * Ancak bu durumun oluşması düşük bir olasılıktır ve rastgele dağılmış verilerden oluşturulan bir ağaçta
+        * ortalama arama süresi
+        * log2(N+1)
+        * olacaktır. Bu performans yine her ağaç yapısının oluşmasının aynı olasılığa
+        * sahip olduğu varsayımından hareketle bulunmaktadır.
+        *
+        * --------------------------------------------------------------------------------------------------------------
+        *
         * The above function that performs binary search uses the property of the binary search tree to continue the search
         * function to the left or right side of the tree according to whether the searched key value is greater or less than
         * the current element. Note that the number of steps that this search function will end depends on the structure of
@@ -127,6 +135,12 @@ public class _03_01_Binary_Search_Tree {
         * element placed as below will always be placed on the far right of the tree because it will be greater than all
         * previous elements. This situation is the worst case for the binary search tree. In a tree with this structure,
         * the search operation will have the same performance as the sequential search method.
+        *
+        * However, this situation is unlikely to occur, and the average search time in a tree created from randomly
+        * distributed data will be
+        * log2(N+1).
+        * This performance is based on the assumption that every tree structure has the
+        * same probability of formation.
         *
         */
 }
