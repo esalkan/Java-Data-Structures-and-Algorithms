@@ -1,6 +1,6 @@
 package JDSA_07_Sorting_Algorithms;
 
-public class _03_Binary_Search {
+public class _03_00_Binary_Search {
     /*
         * İkili arama yöntemi (Binary Search), sıralı bir dizide aranan bir elemanın bulunması için kullanılan bir
         * arama algoritmasıdır.
