@@ -1,6 +1,6 @@
 package JDSA_07_Sorting_Algorithms;
 
-public class _04_Hashing_Method {
+public class _04_00_Hashing_Method {
 
     /*
         * Arama yöntemleri içinde doğrama (bölme/hashing) yöntemi kullanıldığı farklı yaklaşımla ve performans açısından
