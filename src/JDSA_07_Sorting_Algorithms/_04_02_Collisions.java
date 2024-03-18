@@ -118,7 +118,5 @@ public class _04_02_Collisions {
                 array2[index] = keys2[i];
             }
         }
-
-
     }
 }
